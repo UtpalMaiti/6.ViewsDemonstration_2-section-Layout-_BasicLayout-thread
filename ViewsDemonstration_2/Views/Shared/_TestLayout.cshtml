@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <table style="width:100%">
+        <tr>
+            <td colspan="2" style="text-align:center">
+                <h1>Application Header(Test Layout)</h1>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:25%; text-align:center">
+                <p>
+                    @Html.ActionLink("Home", "Index")
+                </p>
+                <p>
+                    @Html.ActionLink("Manage Profile", "EditProfile")
+                </p>
+                <p>
+                    @Html.ActionLink("Manage Orders", "ManageOrders", "Order")
+                </p>
+                <p>
+                    @Html.ActionLink("Change PassWord", "ChangePassword")
+                </p>
+                <p>
+                    @Html.ActionLink("Track Users", "TrackUsers")
+                </p>
+            </td>
+            <td style="border:3px solid blue">
+                @RenderBody()
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center">
+                <h3>Application Footer</h3>
+                Home | About Us | Contact Us
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

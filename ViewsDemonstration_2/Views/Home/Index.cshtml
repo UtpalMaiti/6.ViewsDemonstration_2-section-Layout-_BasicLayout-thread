@@ -1,0 +1,48 @@
+﻿@model List<ViewsDemonstration_2.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+    //Layout = null;
+}
+
+<h2>Starting the View Implementation...</h2>
+
+@* Script Section *@
+@section AdditionalScripts{
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+}
+
+@section UserSection{
+    <a href="/Home/MyCart">My Cart</a>
+    <a href="/Home/LogOut">LogOut</a>
+}
+
+@section MainSection{
+    <h2>Employee List...</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Salary</th>
+                <th>Action(s)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var emp in Model)
+            {
+                <tr>
+                    <td>@emp.Id</td>
+                    <td>@emp.Name</td>
+                    <td>@emp.Location</td>
+                    <td>@emp.Salary</td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditEmployee", new { Id = emp.Id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
